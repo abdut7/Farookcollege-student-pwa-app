@@ -5,6 +5,11 @@ import App from './App';
 import Dashboard from './Home/Dashboard'
 import * as serviceWorker from './serviceWorker';
 
+var loginStatus=1
+if(loginStatus===0){
+    ReactDOM.render(<App/>, document.getElementById('root'));
+}
+else
 ReactDOM.render(<Dashboard />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
