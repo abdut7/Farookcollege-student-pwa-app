@@ -18,6 +18,20 @@ import { mainListItems, secondaryListItems } from './listItems';
 import SimpleLineChart from './SimpleLineChart';
 import SimpleTable from './SimpleTable';
 import Grid from '@material-ui/core/Grid';
+import Profile from './Profile';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListSubheader from '@material-ui/core/ListSubheader';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import PeopleIcon from '@material-ui/icons/People';
+import BarChartIcon from '@material-ui/icons/BarChart';
+import LayersIcon from '@material-ui/icons/Layers';
+import AssignmentIcon from '@material-ui/icons/Assignment';
+import Lock from '@material-ui/icons/Lock';
+import Book from '@material-ui/icons/Book';
+import Edit from '@material-ui/icons/Edit';
 
 
 const drawerWidth = 240;
@@ -100,6 +114,38 @@ const styles = theme => ({
 });
 
 class Dashboard extends React.Component {
+  handleClicked() {
+    console.log("firstList Clicked")
+
+  
+}
+gradeClicked() {
+  console.log("2nd")
+}
+halltkicketClicked() {
+  console.log("2nd")
+}
+timetableClicked() {
+  console.log("2nd")
+}
+sem1Clicked() {
+  console.log("2nd")
+}
+sem2Clicked() {
+  console.log("2nd")
+}
+sem3Clicked() {
+  console.log("2nd")
+}
+sem4Clicked() {
+  console.log("2nd")
+}
+sem5Clicked() {
+  console.log("2nd")
+}
+sem6Clicked() {
+  console.log("2nd")
+}
   state = {
     open: true,
   };
@@ -111,6 +157,7 @@ class Dashboard extends React.Component {
   handleDrawerClose = () => {
     this.setState({ open: false });
   };
+
 
   render() {
     const { classes } = this.props;
@@ -163,7 +210,80 @@ class Dashboard extends React.Component {
             </IconButton>
           </div>
           <Divider />
-          <List>{mainListItems}</List>
+          <List><div>
+    <ListItem  button  onClick={this.handleClicked} >
+      <ListItemIcon>
+        <DashboardIcon/>
+      </ListItemIcon>
+      <ListItemText primary="Exam Application" />
+    </ListItem>
+    <ListItem button onClick={this.gradeClicked}>
+      <ListItemIcon>
+        <Book />
+      </ListItemIcon>
+      <ListItemText primary="Grade card" />
+    </ListItem>
+    <ListItem button onClick={this.halltkicketClicked}>
+      <ListItemIcon>
+        <Edit />
+      </ListItemIcon>
+      <ListItemText primary="HallTicket" />
+    </ListItem>
+    <ListItem button onClick={this.timetableClicked}>
+      <ListItemIcon>
+        <BarChartIcon />
+      </ListItemIcon>
+      <ListItemText primary="TimeTable" />
+    </ListItem>
+    <ListItem button>
+      <ListItemIcon>
+        <Lock />
+      </ListItemIcon>
+      <ListItemText primary="Log Out" />
+    </ListItem>
+  </div>
+);
+
+export const secondaryListItems = (
+  <div>
+    <ListSubheader inset>Result</ListSubheader>
+    <ListItem button onClick={this.sem1Clicked}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Sem 1" />
+    </ListItem>
+    <ListItem button onClick={this.sem2Clicked}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="sem 2" />
+    </ListItem>
+    <ListItem button onClick={this.sem3Clicked}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="sem 3" />
+    </ListItem>
+    <ListItem button onClick={this.sem4Clicked}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="sem 4" />
+    </ListItem>
+        <ListItem button onClick={this.sem5Clicked}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="sem 5" />
+    </ListItem>
+      <ListItem button onClick={this.sem6Clicked}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="sem 6" />
+    </ListItem>
+  </div></List>
           <Divider />
           <List>{secondaryListItems}</List>
         </Drawer>
@@ -180,6 +300,7 @@ class Dashboard extends React.Component {
         
         </Grid>
         <Grid item xs={12} sm={6} lg={6} md={6}>
+       <Profile />
        
         
         </Grid>

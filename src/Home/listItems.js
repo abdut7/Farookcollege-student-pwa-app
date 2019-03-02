@@ -16,8 +16,9 @@ import Edit from '@material-ui/icons/Edit';
 
 
 export const mainListItems = (
+  
   <div>
-    <ListItem button>
+    <ListItem  button  onClick={ console.log('clicked')}>
       <ListItemIcon>
         <DashboardIcon/>
       </ListItemIcon>

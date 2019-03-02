@@ -10,11 +10,11 @@ import Legend from 'recharts/lib/component/Legend';
 
 const data = [
   { name: 'Sem 1',sgpa:'4.6' },
-  { name: 'Sem 2', sgpa:'3.0' },
-  { name: 'Sem 3', sgpa:'5.2' },
-  { name: 'Sem 4', sgpa:'5.5' },
-  { name: 'Sem 5', sgpa:'5.0' },
-  { name: 'Sem 6', sgpa:'5.8' },
+  { name: 'Sem 2',sgpa:'3.0' },
+  { name: 'Sem 3', sgpa:'1.2' },
+  { name: 'Sem 4', sgpa:'3.5' },
+  { name: 'Sem 5', sgpa:'2.0' },
+  { name: 'Sem 6', sgpa:'1.8' },
   
 ];
 
@@ -23,7 +23,7 @@ function SimpleLineChart() {
     // 99% per https://github.com/recharts/recharts/issues/172
     <ResponsiveContainer width="99%" height={320}>
       <LineChart data={data}>
-        <XAxis dataKey="name" />
+        <XAxis dataKey="name"/>
         <YAxis />
         <CartesianGrid vertical={false} strokeDasharray="3 3" />
         <Tooltip />
