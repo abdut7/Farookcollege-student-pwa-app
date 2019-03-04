@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router'
 import classNames from 'classnames';
+import { Link } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Drawer from '@material-ui/core/Drawer';
@@ -24,7 +26,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import DashboardIcon from '@material-ui/icons/Dashboard';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 import PeopleIcon from '@material-ui/icons/People';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import LayersIcon from '@material-ui/icons/Layers';
@@ -32,9 +34,22 @@ import AssignmentIcon from '@material-ui/icons/Assignment';
 import Lock from '@material-ui/icons/Lock';
 import Book from '@material-ui/icons/Book';
 import Edit from '@material-ui/icons/Edit';
+import Examapp from '../Pages/Examapp';
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+let indexpage=require('../index')
 
 
 const drawerWidth = 240;
+const routes = [
+  {
+    path: "../Pages/Examapp",
+    
+    
+    main: () => <Examapp/>
+  },
+  
+];
 
 const styles = theme => ({
   root: {
@@ -116,6 +131,9 @@ const styles = theme => ({
 class Dashboard extends React.Component {
   handleClicked() {
     console.log("firstList Clicked")
+    ReactDOM.render(<Dashboard />, this.document.getElementById('root'));
+    
+   
 
   
 }
@@ -211,12 +229,14 @@ sem6Clicked() {
           </div>
           <Divider />
           <List><div>
+          
     <ListItem  button  onClick={this.handleClicked} >
       <ListItemIcon>
         <DashboardIcon/>
       </ListItemIcon>
       <ListItemText primary="Exam Application" />
     </ListItem>
+  
     <ListItem button onClick={this.gradeClicked}>
       <ListItemIcon>
         <Book />
@@ -242,9 +262,7 @@ sem6Clicked() {
       <ListItemText primary="Log Out" />
     </ListItem>
   </div>
-);
 
-export const secondaryListItems = (
   <div>
     <ListSubheader inset>Result</ListSubheader>
     <ListItem button onClick={this.sem1Clicked}>
@@ -284,9 +302,9 @@ export const secondaryListItems = (
       <ListItemText primary="sem 6" />
     </ListItem>
   </div></List>
-          <Divider />
-          <List>{secondaryListItems}</List>
+         
         </Drawer>
+        <div id="bodys">
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Grid direction='column' >
@@ -312,6 +330,7 @@ export const secondaryListItems = (
             <SimpleTable />
           </div>
         </main>
+        </div>
       </div>
     );
   }

@@ -5,6 +5,7 @@ import App from './App';
 import Dashboard from './Home/Dashboard'
 import * as serviceWorker from './serviceWorker';
 
+
 var loginStatus=1
 if(loginStatus===0){
     ReactDOM.render(<App/>, document.getElementById('root'));
@@ -12,7 +13,9 @@ if(loginStatus===0){
 else
 ReactDOM.render(<Dashboard />, document.getElementById('root'));
 
+
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+

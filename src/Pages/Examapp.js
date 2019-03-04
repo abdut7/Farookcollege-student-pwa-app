@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import CommentIcon from '@material-ui/icons/Comment';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -40,10 +41,12 @@ class CheckboxList extends React.Component {
 
   render() {
     const { classes } = this.props;
+    
 
     return (
+        <div>
       <List className={classes.root}>
-        {[0, 1, 2, 3, 4, 5,6].map(value => (
+        {[0, 1, 2, 3, 4, 5, 6].map(value => (
           <ListItem key={value} role={undefined} dense button onClick={this.handleToggle(value)}>
             <Checkbox
               checked={this.state.checked.indexOf(value) !== -1}
@@ -52,13 +55,15 @@ class CheckboxList extends React.Component {
             />
             <ListItemText primary={`paper ${value + 1}`} />
             <ListItemSecondaryAction>
-              <IconButton aria-label="Comments">
-                <CommentIcon />
-              </IconButton>
+            
             </ListItemSecondaryAction>
           </ListItem>
         ))}
       </List>
+      <Button variant="contained" color="primary" className={classes.button}>
+        SUBMIT
+      </Button>
+      </div>
     );
   }
 }
